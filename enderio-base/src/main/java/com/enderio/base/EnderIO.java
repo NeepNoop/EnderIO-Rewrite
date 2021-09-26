@@ -1,5 +1,6 @@
 package com.enderio.base;
 
+import com.enderio.base.common.config.EIOConfig;
 import com.enderio.base.data.recipe.standard.StandardRecipes;
 import com.tterrag.registrate.Registrate;
 import com.tterrag.registrate.util.NonNullLazyValue;
@@ -20,6 +21,8 @@ public class EnderIO {
     private static final NonNullLazyValue<Registrate> REGISTRATE = new NonNullLazyValue<>(() -> Registrate.create(DOMAIN));
 
     public EnderIO() {
+        EIOConfig.register();
+
         EIOItems.register();
 
         IEventBus modEventBus = FMLJavaModLoadingContext
